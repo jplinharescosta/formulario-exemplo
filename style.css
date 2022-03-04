@@ -7,8 +7,10 @@
     font-family: sans-serif;
     color: rgb(0, 0, 0);
     padding-bottom: 1em;
+    
     margin-left: 0px;
     margin-bottom: 0px;
+    
 }
 
 #subtilulo {
@@ -22,17 +24,28 @@
     padding-left: 1em;
 }
 
+
+
 fieldset {
     border: 0;
+}
+
+form {
+    max-width: 500px;
+    width: 70%;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 body {
     background-color: #f0f8ff;
     font-family: sans-serif;
     font-size: 1em;
-    color: #000000;
-    margin-left: 36%;
-    margin-top: 2%;
+    color: #000000;    
     justify-content: center;
 }
 
@@ -41,6 +54,7 @@ input, select, textarea, button {
     font-size: 1em;
     color: #000000;
     border-radius: 5px;
+    outline: 0;
 }
 
 .grupo:before, .grupo:after {
@@ -52,13 +66,16 @@ input, select, textarea, button {
 }
 
 .campo {
-    margin: 1em;
+    margin: 1em;   
+    
 }
 
 .campo label {
     margin-bottom: 0.3em;
     color: #000000;
     display: block;
+    border: 0;
+    
 }
 
 fieldset.grupo .campo {
@@ -68,9 +85,11 @@ fieldset.grupo .campo {
 
 .campo input[type="text"], .campo input[type="email"], .campo select, .campo textarea {
     padding: 0.3em;
-    border: 1px solid #000000;
+    border: 1px solid #4A5F6A;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     display: block;
+    outline: 0;
+    
 }
 
 .campo select option {
@@ -90,24 +109,84 @@ fieldset.grupo .campo {
     padding: 0.6em 2.5em;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-    position: static;
-    top: 90%;
-    left: 50%;
-    margin-left: 20%;
-    transform: translate(-50%, -50%);
-    margin-top: 3em;
-    text-align: center;
+    margin-top: 1em;
+    transform: translate(100%, 20%);
+    transition: 500ms;
+    
 }
 
 .botao:hover {
     background: #ffffff;
-    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.2);
     text-shadow: none;
     color: black;
-    
-    
+
 }
 
 .botao, select {
     cursor: pointer;
+}
+
+.boxcheck {    
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.boxcheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 15px;
+    box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.5)    
+    
+}
+
+.boxcheck:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.boxcheck input:checked ~ .checkmark {
+    background-color: #2196f3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.boxcheck input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.boxcheck .checkmark::after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
