@@ -4,19 +4,23 @@
 }
 
 #titulo {
-    font-family: sans-serif;
-    color: rgb(0, 0, 0);
-    padding-bottom: 1em;
-    margin-top: 15em;
-    margin-left: 0px;
-    margin-bottom: 0px;
+    max-width: 500px;
+    width: 100%;
+    padding-top: 10%;
+    margin-bottom: -28%;
     
+
+
 }
 
 #subtilulo {
     font-family: sans-serif;
     color: rgb(0, 0, 0);
-    margin-left: 120px;
+    margin-left: 125px;
+}
+
+.tudoTitulo {
+    justify-content: center;
 }
 
 #check {
